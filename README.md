@@ -99,5 +99,10 @@
     </DL><p>
 </DL><p>
 
+将本地图像识别技术应用到网页中至少在两方面拥有重大意义：1、能够更加丰富网页应用的形式和种类2、提高web上图像识别的效率。单纯使用javascript 实现web上的图像识别有一定局限性，javascript属于解释型语言，执行效率较底，不适合编写含有大量算法的程序。本文在Google Native Client的基础上，采用javascript,C++实现一种能够在chromium浏览器下实现一个具备本地图像识别效率的基于web的图像识别程序。
+Google Native Client（缩写为NaCl），是一个由谷歌所发起的开放原始码计划，采用BSD许可证。它采用沙盒技术，让Intel x86、ARM或MIPS子集的机器码直接在沙盒上运行。它能够从浏览器直接运行程式机器码，独立于使用者的作业系统之外，使Web应用程式可以用接近于机器码运作的速度来执行，同时兼顾安全性。
+OpenCV的全称是Open Source Computer Vision Library，是一个跨平台的计算机视觉库。OpenCV是由英特尔公司发起并参与开发，以BSD许可证授权发行，可以在商业和研究领域中免费使用。OpenCV可用于开发实时的图像处理、计算机视觉以及模式识别程序。Opencv 库目前可以部分移植到NaCl环境下运行，所以我们可以用opencv来处理javascript取得的图像数据，来达到高效率的人脸识别的目的。
+将opencv移植到native client环境下，通过native client自带的toolschain进行编译，得到可以在web上安全执行的库文件。通过PPAPI得到摄像头数据。利用native client 加载训练集，通过图像识别算法进行图像解析，得到人脸位置。最后将人脸位置返回到web端，用javascript绘制图像。
+
 
 
