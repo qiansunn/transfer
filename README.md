@@ -22,6 +22,11 @@ PPAPI主要包括：一系列由IDL标准定义的api，c和c++接口，将c调�
 
 
 
+
+存在问题：由于取得chromium代码的网址被墙了，导致难以拿到code并编译。并且编译项目时耗费大量时间，大约6小时左右
+解决方法：购买境外服务器sync代码，然后rsync到本地。编译时采用动态连接的方式节省时间。
+
+
 <!DOCTYPE NETSCAPE-Bookmark-file-1>
 <!-- This is an automatically generated file.
      It will be read and overwritten.
